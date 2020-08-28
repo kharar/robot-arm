@@ -6,18 +6,28 @@ let arm_pos = 0
 let klo_pos = 0
 let delaytime = 5
 let arm_max = 90
-let klo_max = 30
+let klo_max = 90
 klo_pos = 0
-for (let index = 0; index <= arm_max; index++) {
-    arm_pos = index
-    basic.pause(delaytime)
-    set_robot_arm()
-}
-for (let index = 0; index <= arm_max; index++) {
-    arm_pos = arm_max - index
-    basic.pause(delaytime)
-    set_robot_arm()
-}
+set_robot_arm()
 basic.forever(function () {
-	
+    for (let index = 0; index <= arm_max; index++) {
+        arm_pos = index
+        basic.pause(delaytime)
+        set_robot_arm()
+    }
+    for (let index = 0; index <= klo_max; index++) {
+        klo_pos = klo_max - index
+        basic.pause(delaytime)
+        set_robot_arm()
+    }
+    for (let index = 0; index <= arm_max; index++) {
+        arm_pos = arm_max - index
+        basic.pause(delaytime)
+        set_robot_arm()
+    }
+    for (let index = 0; index <= klo_max; index++) {
+        klo_pos = index
+        basic.pause(delaytime)
+        set_robot_arm()
+    }
 })
